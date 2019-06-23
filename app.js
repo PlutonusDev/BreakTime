@@ -8,7 +8,7 @@ const debug = require('electron-debug');
 const contextMenu = require('electron-context-menu');
 
 unhandled();
-debug();
+//debug();
 contextMenu();
 
 app.setAppUserModelId('com.plutonusdev.BreakTime');
@@ -73,6 +73,7 @@ app.on('window-all-closed', () => {
 app.on('activate', () => {
 	if (!mainWindow) {
 		mainWindow = createMainWindow();
+		mainWindow.setKiosk(true);
 	}
 });
 
