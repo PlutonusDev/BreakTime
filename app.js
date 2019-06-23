@@ -1,7 +1,7 @@
 'use strict';
 const path = require('path');
 const {app, BrowserWindow} = require('electron');
-const {autoUpdater} = require('electron-updater');
+//const {autoUpdater} = require('electron-updater');	Not ready for use.
 const {is} = require('electron-util');
 const unhandled = require('electron-unhandled');
 const contextMenu = require('electron-context-menu');
@@ -11,14 +11,14 @@ contextMenu();
 
 app.setAppUserModelId('com.plutonusdev.BreakTime');
 
-if (!is.development) {
+/*if (!is.development) {
 	const FOUR_HOURS = 1000 * 60 * 60 * 4;
 	setInterval(() => {
 		autoUpdater.checkForUpdates();
 	}, FOUR_HOURS);
 
 	autoUpdater.checkForUpdates();
-}
+}*/
 
 // Prevent window from being garbage collected
 let mainWindow;
@@ -31,8 +31,8 @@ const createMainWindow = async () => {
 		},
 		alwaysOnTop: true,
 		show: false,
-		width: 500,
-		height: 500
+		width: 1,
+		height: 1
 	});
 
 	win.on('ready-to-show', () => {
