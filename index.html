@@ -1,18 +1,75 @@
 <!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Electron boilerplate</title>
-		<link rel="stylesheet" href="index.css">
-	</head>
-	<body>
-		<div class="container">
-			<header>
-				<h1>Electron boilerplate</h1>
-				<p></p>
-			</header>
-			<section class="main"></section>
-			<footer></footer>
+<html lang="en">
+
+<head>
+	<title>BreakTime</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8.13.0/dist/sweetalert2.all.min.js"></script>
+
+	<link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+	<nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<a class="navbar-brand" href="#">BreakTime</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+			aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarColor01">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link snd-tap" href="#">Login <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link snd-dialog btn-close" href="#">Close Kiosk</a>
+				</li>
+			</ul>
 		</div>
-	</body>
+	</nav>
+	<div class="container">
+		<section class="main">
+			
+		</section>
+		<footer></footer>
+	</div>
+	<script>if (window.module) module = window.module;</script>
+	<script src="js/soundHandler.js"></script>
+	<script>
+		$(document).ready(function () {
+			const remote = require('electron').remote;
+			$(".btn-close").on("click", function () {
+				Swal.fire({
+					type: 'warning',
+					text: 'Are you sure you want to exit?',
+					showCancelButton: true,
+					successButtonText: "Yes",
+					cancelButtonText: "No"
+				}).then(result => {
+					if (result.value) {
+						playSound("tap");
+						setTimeout(() => {
+							var window = remote.getCurrentWindow();
+							window.close();
+						}, 200);
+					}
+				});
+			});
+		});
+	</script>
+</body>
+
 </html>

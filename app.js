@@ -1,31 +1,26 @@
 'use strict';
 const path = require('path');
-const {app, BrowserWindow, Menu} = require('electron');
-/// const {autoUpdater} = require('electron-updater');
-const {is} = require('electron-util');
+const { app, BrowserWindow } = require('electron');
+const { autoUpdater } = require('electron-updater');
+const { is } = require('electron-util');
 const unhandled = require('electron-unhandled');
 const debug = require('electron-debug');
 const contextMenu = require('electron-context-menu');
-const config = require('./config');
-const menu = require('./menu');
 
 unhandled();
 debug();
 contextMenu();
 
-// Note: Must match `build.appId` in package.json
-app.setAppUserModelId('com.company.AppName');
+app.setAppUserModelId('com.plutonusdev.BreakTime');
 
-// Uncomment this before publishing your first version.
-// It's commented out as it throws an error if there are no published versions.
-// if (!is.development) {
-// 	const FOUR_HOURS = 1000 * 60 * 60 * 4;
-// 	setInterval(() => {
-// 		autoUpdater.checkForUpdates();
-// 	}, FOUR_HOURS);
-//
-// 	autoUpdater.checkForUpdates();
-// }
+if (!is.development) {
+	const FOUR_HOURS = 1000 * 60 * 60 * 4;
+	setInterval(() => {
+		autoUpdater.checkForUpdates();
+	}, FOUR_HOURS);
+
+	autoUpdater.checkForUpdates();
+}
 
 // Prevent window from being garbage collected
 let mainWindow;
@@ -33,9 +28,13 @@ let mainWindow;
 const createMainWindow = async () => {
 	const win = new BrowserWindow({
 		title: app.getName(),
+		webPreferences: {
+            nodeIntegration: true
+        },
+		//alwaysOnTop: true,
 		show: false,
-		width: 600,
-		height: 400
+		width: 500,
+		height: 500
 	});
 
 	win.on('ready-to-show', () => {
@@ -43,8 +42,6 @@ const createMainWindow = async () => {
 	});
 
 	win.on('closed', () => {
-		// Dereference the window
-		// For multiple windows store them in an array
 		mainWindow = undefined;
 	});
 
@@ -53,7 +50,6 @@ const createMainWindow = async () => {
 	return win;
 };
 
-// Prevent multiple instances of the app
 if (!app.requestSingleInstanceLock()) {
 	app.quit();
 }
@@ -82,9 +78,12 @@ app.on('activate', () => {
 
 (async () => {
 	await app.whenReady();
-	Menu.setApplicationMenu(menu);
 	mainWindow = await createMainWindow();
-
-	const favoriteAnimal = config.get('favoriteAnimal');
-	mainWindow.webContents.executeJavaScript(`document.querySelector('header p').textContent = 'Your favorite animal is ${favoriteAnimal}'`);
+	//mainWindow.setKiosk(true);
+	mainWindow.setMenu(null);
+	mainWindow.on("blur", () => {
+		mainWindow.restore();
+		mainWindow.focus();
+		//mainWindow.setKiosk(true);
+	});
 })();

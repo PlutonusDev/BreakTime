@@ -4,6 +4,7 @@
 	"version": "1.0.0",
 	"description": "A roster and shift manager for workplaces.",
 	"license": "GPL-3.0",
+	"main": "app.js",
 	"repository": "PlutonusDev/BreakTime",
 	"author": {
 		"name": "PlutonusDev",
