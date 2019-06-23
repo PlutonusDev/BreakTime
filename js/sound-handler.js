@@ -27,18 +27,16 @@ function playSound(id) {
 		warningAudio.currentTime = 0;
 		warningAudio.play();
 	}
-
 }
 
 $(document).ready(() => {
-
 	startupAudio.play();
 
 	$('.snd-tap').each(function () {
 		$(this).on('click', playSound('tap'));
 	});
 
-	$(".snd-dialog").each(function () {
+	$('.snd-dialog').each(function () {
 		$(this).on('click', playSound('dialog'));
 	});
 });
