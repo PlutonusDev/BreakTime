@@ -1,14 +1,12 @@
 'use strict';
 const path = require('path');
-const {app, BrowserWindow} = require('electron');
-const {autoUpdater} = require('electron-updater');
-const {is} = require('electron-util');
+const { app, BrowserWindow } = require('electron');
+const { autoUpdater } = require('electron-updater');
+const { is } = require('electron-util');
 const unhandled = require('electron-unhandled');
-const debug = require('electron-debug');
 const contextMenu = require('electron-context-menu');
 
 unhandled();
-//debug();
 contextMenu();
 
 app.setAppUserModelId('com.plutonusdev.BreakTime');
@@ -29,8 +27,8 @@ const createMainWindow = async () => {
 	const win = new BrowserWindow({
 		title: app.getName(),
 		webPreferences: {
-        	nodeIntegration: true
-    	},
+			nodeIntegration: true
+		},
 		alwaysOnTop: true,
 		show: false,
 		width: 500,
