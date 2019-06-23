@@ -1,3 +1,4 @@
+const wait = require("util").promisify(setTimeout);
 const path = require('path');
 const $ = require('jquery');
 
@@ -33,10 +34,14 @@ $(document).ready(() => {
 	startupAudio.play();
 
 	$('.snd-tap').each(function () {
-		$(this).on('click', playSound('tap'));
+		$(this).on('click', () => {
+			playSound('tap')
+		});
 	});
 
 	$('.snd-dialog').each(function () {
-		$(this).on('click', playSound('dialog'));
+		$(this).on('click', () => {
+			playSound('dialog')
+		});
 	});
 });
