@@ -1,7 +1,7 @@
 {
 	"name": "breaktime",
 	"productName": "Break Time",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A roster and shift manager for workplaces.",
 	"license": "GPL-3.0",
 	"main": "app.js",
