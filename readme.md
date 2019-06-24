@@ -16,6 +16,7 @@
 ## Install
 
 *Windows 7+ only supported (64-bit only).*
+
 Support for Mac and Linux will be made available in the future.
 
 **Windows**
