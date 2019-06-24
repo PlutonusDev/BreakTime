@@ -1,10 +1,10 @@
-function delay(ms){
-    var ctr, rej, p = new Promise(function (resolve, reject) {
-        ctr = setTimeout(resolve, ms);
-        rej = reject;
-    });
-    p.cancel = function(){ clearTimeout(ctr); rej(Error("Cancelled"))};
-    return p; 
+function delay(ms) {
+	let ctr, rej, p = new Promise(function (resolve, reject) {
+		ctr = setTimeout(resolve, ms);
+		rej = reject;
+	});
+	p.cancel = function () { clearTimeout(ctr); rej(Error("Cancelled")) };
+	return p;
 }
 
 $(document).ready(() => {
@@ -14,7 +14,7 @@ $(document).ready(() => {
 		port: 36400,
 		path: '/breaktime'
 	});
-	
+
 	conn.connect().then(() => {
 		const sock = conn.instance;
 
