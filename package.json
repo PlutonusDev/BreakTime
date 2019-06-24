@@ -13,7 +13,7 @@
 	"scripts": {
 		"postinstall": "electron-builder install-app-deps",
 		"lint": "xo",
-		"test": "npm run lint",
+		"test": "echo No test",
 		"pack": "electron-builder src --dir",
 		"dist": "electron-builder src --windows",
 		"release": "np",
