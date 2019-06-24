@@ -15,17 +15,8 @@
 
 ## Install
 
-*macOS 10.10+, Linux, and Windows 7+ are supported (64-bit only).*
-
-**macOS**
-
-[**Download**](https://github.com/PlutonusDev/BreakTime/releases/latest) the `.dmg` file.
-
-**Linux**
-
-[**Download**](https://github.com/PlutonusDev/BreakTime/releases/latest) the `.AppImage` or `.deb` file.
-
-*The AppImage needs to be [made executable](http://discourse.appimage.org/t/how-to-make-an-appimage-executable/80) after download.*
+*Windows 7+ only supported (64-bit only).*
+Support for Mac and Linux will be made available in the future.
 
 **Windows**
 
