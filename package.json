@@ -4,7 +4,7 @@
 	"version": "1.0.1",
 	"description": "A roster and shift manager for workplaces.",
 	"license": "GPL-3.0",
-	"main": "app.js",
+	"main": "src/app.js",
 	"repository": "PlutonusDev/BreakTime",
 	"author": {
 		"name": "PlutonusDev",
@@ -14,10 +14,9 @@
 		"postinstall": "electron-builder install-app-deps",
 		"lint": "xo",
 		"test": "npm run lint",
-		"pack": "electron-builder --dir",
-		"dist": "electron-builder --windows",
+		"pack": "electron-builder src --dir",
+		"dist": "electron-builder src --windows",
 		"release": "np",
-		"startWindowOnly": "electron window",
 		"start": "electron ."
 	},
 	"dependencies": {
