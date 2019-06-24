@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+	<title>BreakTime</title>
+
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+	
+	<script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
+	<script src='https://code.jquery.com/jquery-3.4.1.slim.min.js'
+		integrity='sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=' crossorigin='anonymous'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'
+		integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1'
+		crossorigin='anonymous'></script>
+	<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'
+		integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM'
+		crossorigin='anonymous'></script>
+	<script src='https://cdn.jsdelivr.net/npm/sweetalert2@8.13.0/dist/sweetalert2.all.min.js'></script>
+
+	<link rel='stylesheet' href='css/bootstrap.css'>
+	<link rel='stylesheet' href='css/global.css'>
+</head>
+
+<body>
+	<nav id='navbar' class='navbar navbar-expand-lg navbar-dark bg-primary'>
+		<a class='navbar-brand' href='#'>BreakTime</a>
+		<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarColor01'
+			aria-controls='navbarColor01' aria-expanded='false' aria-label='Toggle navigation'>
+			<span class='navbar-toggler-icon'></span>
+		</button>
+
+		<div class='collapse navbar-collapse' id='navbarColor01'>
+			<ul class='navbar-nav mr-auto'>
+				<li class='nav-item active'>
+					<a class='nav-link snd-tap' href='#'>Login <span class='sr-only'>(current)</span></a>
+				</li>
+				<li class='nav-item'>
+					<a class='nav-link snd-dialog btn-close' href='#'>Close Kiosk</a>
+				</li>
+				<li class='nav-item'>
+					<a id='connected' class='nav-link s-connecting'>Connecting...</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class='container'>
+		<center>
+			<section class='main'>
+				<div class='login-details'>
+					<h2 class='header'>LOGIN</h2>
+					<div class='login-datetime'>
+						<label id='lblDateDisplay' class='login-date'>Loading...</label>
+						<label id='lblTimeDisplay' class='login-time'>Loading...</label>
+					</div>
+					<div class='login-container'>
+						<fieldset class='login'>
+							<div class='field editor-field input-flex'>
+								<input disabled autocomplete="off" data-val="true" data-val-required="Employee Code is required." id="UserName" name="UserName" placeholder="Please wait..." type="text" value="" aria-describedby="UserName-error" class="valid" aria-invalid="false">
+							</div>
+							<div class='field editor-field input-flex'>
+								<input disabled autocomplete="off" data-val="true" data-val-required="Password is required." id="Password" name="Password" placeholder="Please wait..." type="password" value="" aria-describedby="Password-error" class="valid" aria-invalid="false">
+							</div>
+							<div class='field logon-submit'>
+								<input disabled id="loginbtn" type="submit" value="Please wait..." class="plainButton button button-main">
+							</div>
+							<div class='field'>
+								<p class='login-forgot'>
+									Forgotten your <a id="forgot-un" href="#">Employee Code</a> or <a id="forgot-pw" href="#">Password</a>?
+								</p>
+							</div>
+						</fieldset>
+					</div>
+				</div>
+				<div class='forgot-un-details'>
+					<h2 class='header'>Employee Code Reminder</h2>
+					<div class='forgot-container'>
+						<fieldset class='forgot-un'>
+							<div class='field editor-field input-flex'>
+								<input autocomplete="off" data-val="true" data-val-required="Email is required." id="Email" name="Email" placeholder="Enter your Email" type="text" value="" aria-describedby="Email-error" class="valid" aria-invalid="false">
+							</div>
+							<div class='field forgot-un-submit'>
+								<input id="forgot-un-btn" type="submit" value="Request Employee ID" class="plainButton button button-main">
+							</div>
+							<div class='field'>
+								<p class='login-forgot'>
+									<input id="forgot-un-return" type="submit" value="< Go Back" class="plainButton button button-main">
+								</p>
+							</div>
+						</fieldset>
+					</div>
+				</div>
+				<div class='forgot-pw-details'>
+					<h2 class='header'>Password Reminder</h2>
+					<div class='forgot-container'>
+						<fieldset class='forgot-pw'>
+							<div class='field editor-field input-flex'>
+								<input autocomplete="off" data-val="true" data-val-required="Email is required." id="Email" name="Email" placeholder="Enter your Email" type="text" value="" aria-describedby="Email-error" class="valid" aria-invalid="false">
+							</div>
+							<div class='field forgot-pw-submit'>
+								<input id="forgot-pw-btn" type="submit" value="Request Employee ID" class="plainButton button button-main">
+							</div>
+							<div class='field'>
+								<input id="forgot-pw-return" type="submit" value="< Go Back" class="plainButton button button-main">
+							</div>
+						</fieldset>
+					</div>
+				</div>
+			</section>
+		</center>
+		<footer></footer>
+	</div>
+
+	<script>if (window.module) module = window.module;</script>
+	<script src='js/sound-handler.js'></script>
+	<script src='js/socket.js'></script>
+	<script src='js/transport.js'></script>
+	<script src='js/binds.js'></script>
+
+	<script src="js/login.js"></script>
+</body>
+
+</html>
