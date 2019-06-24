@@ -9,7 +9,7 @@
         <img src="https://david-dm.org/PlutonusDev/BreakTime.svg">
 		<br />
 		<br />
-		<img src="https://i.imgur.com/NqEjnTa.gif">
+		<img src="https://i.imgur.com/NKc3EFa.gif">
 		<b>This is the entirety of BreakTime currently. It connects to a local server @ [http://localhost:36400](#)</b>
     </p>
 </div>
