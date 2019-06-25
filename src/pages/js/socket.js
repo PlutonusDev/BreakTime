@@ -25,30 +25,13 @@ class btsocket {
 	}
 
 	connect() {
-		return new Promise((res, rej) => {
-			this.instance = io(`${this.protocol}://${this.url}${this.port ? `:${this.port}` : ''}`, {
-				path: this.path || ''
-			});
-
-			this.instance._connectTimer = setTimeout(function() {
-				this.instance = false;
-				rej();
-			}, 2000);
-
-			this.instance.once('connect', () => {
-				this.connected = true;
-				clearTimeout(this.instance._connectTimer);
-				res();
-			});
+		this.instance = io(`${this.protocol}://${this.url}${this.port ? `:${this.port}` : ''}`, {
+			path: this.path || ''
 		});
+		return this.instance;
+	}
+
+	disconnect() {
+		this.instance.disconnect();
 	}
 }
-
-/*$(function() {
-	const socket = io('http://127.0.0.1:36400', {
-		path:'/breaktime'
-	});
-	socket.on('connected', () => {
-
-	});
-});*/

@@ -19,6 +19,10 @@ contextMenu();
 
 app.setAppUserModelId('com.plutonusdev.BreakTime');
 
+app.setLoginItemSettings({
+	openAtLogin: true
+});
+
 /*if (!is.development) {
 	const FOUR_HOURS = 1000 * 60 * 60 * 4;
 	setInterval(() => {

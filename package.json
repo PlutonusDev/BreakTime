@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@types/socket.io-client": "^1.4.32",
+    "bcrypt": "^3.0.6",
     "electron-context-menu": "^0.12.1",
     "electron-debug": "^3.0.0",
     "electron-store": "^3.3.0",
@@ -33,7 +34,8 @@
     "moment": "^2.24.0",
     "moment-duration-format": "^2.3.2",
     "snekfetch": "^4.0.4",
-    "socket.io": "^2.2.0"
+    "socket.io": "^2.2.0",
+    "sqlite": "^3.0.3"
   },
   "devDependencies": {
     "electron": "^5.0.4",
