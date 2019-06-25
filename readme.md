@@ -26,3 +26,9 @@ Support for Mac and Linux will be made available in the future.
 **Windows**
 
 [**Download**](https://github.com/PlutonusDev/BreakTime/releases/latest) the `.exe` file.
+
+-----------
+
+###Admin login:
+**Employee ID**: 0000
+**Password**: password
