@@ -29,6 +29,8 @@ Support for Mac and Linux will be made available in the future.
 
 -----------
 
-###Admin login:
+##Admin login:
+
 **Employee ID**: 0000
+
 **Password**: password
