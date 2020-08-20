@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@types/socket.io-client": "^1.4.32",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "electron-context-menu": "^0.12.1",
     "electron-debug": "^3.0.0",
     "electron-store": "^3.3.0",
