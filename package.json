@@ -34,7 +34,7 @@
     "moment": "^2.24.0",
     "moment-duration-format": "^2.3.2",
     "snekfetch": "^4.0.4",
-    "socket.io": "^2.2.0",
+    "socket.io": "^2.4.0",
     "sqlite": "^3.0.3"
   },
   "devDependencies": {
